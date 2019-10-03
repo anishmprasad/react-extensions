@@ -65,7 +65,4 @@ Card.defaultProps = {
   borderColor: 'black',
   type: 'inline-block'
 };
-View.defaultProps = {
-  component: 'div'
-};
 //# sourceMappingURL=index.js.map
