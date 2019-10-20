@@ -283,7 +283,7 @@ Flex.defaultProps = {
 /*!**********************************!*\
   !*** ./core/components/index.js ***!
   \**********************************/
-/*! exports provided: Card, View, Flex */
+/*! exports provided: Card, View, Flex, Popover */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -296,6 +296,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _flex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flex */ "./core/components/flex/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Flex", function() { return _flex__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _popover__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popover */ "./core/components/popover/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Popover", function() { return _popover__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
 /* @remove-on-es-build-begin */
 var ENV = "development";
@@ -311,6 +314,29 @@ typeof window !== 'undefined') {
 
 
 
+
+
+/***/ }),
+
+/***/ "./core/components/popover/index.js":
+/*!******************************************!*\
+  !*** ./core/components/popover/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Popover; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rpopover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rpopover */ "./node_modules/rpopover/dist/index.js");
+/* harmony import */ var rpopover__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rpopover__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Popover(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(rpopover__WEBPACK_IMPORTED_MODULE_1___default.a, props);
+}
 
 /***/ }),
 
@@ -365,6 +391,68 @@ var View = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(function (_r
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./components */ "./core/components/index.js");
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg) && arg.length) {
+				var inner = classNames.apply(null, arg);
+				if (inner) {
+					classes.push(inner);
+				}
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if ( true && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
 
 /***/ }),
 
@@ -1499,6 +1587,17 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/rpopover/dist/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/rpopover/dist/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,o){ true?module.exports=o(__webpack_require__(/*! react */ "react"),__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js")):undefined}(this,function(e,o){return function(e){var o={};function t(n){if(o[n])return o[n].exports;var r=o[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,t),r.l=!0,r.exports}return t.m=e,t.c=o,t.d=function(e,o,n){t.o(e,o)||Object.defineProperty(e,o,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,o){if(1&o&&(e=t(e)),8&o)return e;if(4&o&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&o&&"string"!=typeof e)for(var r in e)t.d(n,r,function(o){return e[o]}.bind(null,r));return n},t.n=function(e){var o=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(o,"a",o),o},t.o=function(e,o){return Object.prototype.hasOwnProperty.call(e,o)},t.p="",t(t.s=2)}([function(o,t){o.exports=e},function(e,t){e.exports=o},function(e,o,t){"use strict";t.r(o),t.d(o,"default",function(){return h});var n=t(0),r=t.n(n),s=t(1),i=t.n(s);t(3);function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function c(){return(c=Object.assign||function(e){for(var o=1;o<arguments.length;o++){var t=arguments[o];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e}).apply(this,arguments)}function u(e,o){for(var t=0;t<o.length;t++){var n=o[t];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function p(e){return(p=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function l(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function d(e,o){return(d=Object.setPrototypeOf||function(e,o){return e.__proto__=o,e})(e,o)}function f(e,o,t){return o in e?Object.defineProperty(e,o,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[o]=t,e}var h=function(e){function o(){var e,t,n,r;!function(e,o){if(!(e instanceof o))throw new TypeError("Cannot call a class as a function")}(this,o);for(var s=arguments.length,i=new Array(s),c=0;c<s;c++)i[c]=arguments[c];return n=this,r=(e=p(o)).call.apply(e,[this].concat(i)),t=!r||"object"!==a(r)&&"function"!=typeof r?l(n):r,f(l(t),"_timer",null),f(l(t),"_isMounted",!1),f(l(t),"_mouseEntered",!1),f(l(t),"showDropdown",function(){t._clearTimer(),t.state.showDropdown||(t._timer=window.setTimeout(function(){this._setState({showDropdown:!0})}.bind(l(t)),100))}),f(l(t),"hideDropdown",function(){t._clearTimer(),t.state.showDropdown&&(t._timer=window.setTimeout(function(){this.closeDropdown()}.bind(l(t)),100))}),f(l(t),"scrollCloseDropdown",function(){t._mouseEntered||t.closeDropdown()}),f(l(t),"mouseEntered",function(){t._mouseEntered=!0}),f(l(t),"mouseLeft",function(){t._mouseEntered=!1}),f(l(t),"state",{showDropdown:!1}),f(l(t),"closeDropdown",function(){t._setState({showDropdown:!1})}),f(l(t),"handleStateChange",function(){t._setState({showDropdown:!t.state.showDropdown})}),t}var t,s,h;return function(e,o){if("function"!=typeof o&&null!==o)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(o&&o.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),o&&d(e,o)}(o,n["Component"]),t=o,(s=[{key:"closeDropdownIfOther",value:function(e){e.dropdown!==this&&this.closeDropdown()}},{key:"addEventListeners",value:function(){this.props.closeOnScroll&&!this._hasEventListener&&(window.addEventListener("scroll",this.scrollCloseDropdown,!1),window.addEventListener("show_dropdown",this.closeDropdownIfOther,!1),this._hasEventListener=!0)}},{key:"removeEventListeners",value:function(){window.removeEventListener("scroll",this.scrollCloseDropdown,!1),window.removeEventListener("show_dropdown",this.closeDropdownIfOther,!1),this._hasEventListener=!1}},{key:"_clearTimer",value:function(){window.clearTimeout(this._timer)}},{key:"getDropdown",value:function(){return this.state.showDropdown&&this.props.show?r.a.createElement("div",{className:"".concat(this.state.showDropdown?"":"isHidden").concat(this.props.onHover&&!this._isMounted?"dropdownContHover":"").concat(i()(this.props.dropdownComponentClass)),onMouseEnter:this.mouseEntered,onMouseLeave:this.mouseLeft},this.props.onHover?void 0:r.a.createElement("div",{onClick:this.handleStateChange,className:"mask"}),r.a.createElement("div",{className:"listSlideInAnimation"},this.props.caret&&r.a.createElement("span",{className:"caret ".concat(this.props.isSecondary?"caretSecondary":"")}),r.a.createElement("div",{className:"\n".concat("dropdownContainer ".concat(this.props.isSecondary?"dropdownContainerSecondary":""),"\n").concat(["dropdownContainer--".concat(this.props.dropdownAlignment)])},r.a.cloneElement(this.props.dropdownComponent,{closeDropdown:this.closeDropdown})))):null}},{key:"render",value:function(){var e={},o={};return this.props.onHover&&(e.onMouseEnter=this.showDropdown,e.onMouseLeave=this.hideDropdown,this.props.disableClickOnHover||(o.onClick=this.hideDropdown)),r.a.createElement("div",c({className:"popover-container ".concat(this.props.onHover?"popover-container__hover":""," ").concat(i()(this.props.containerClass))},e),this.props.onHover?r.a.createElement("div",c({className:"".concat(i()(this.props.buttonComponentClass))},o),this.props.buttonComponent):r.a.createElement("div",{className:"".concat(i()(this.props.buttonComponentClass)),onClick:this.handleStateChange},this.props.buttonComponent),this.getDropdown())}},{key:"componentDidUpdate",value:function(e,o){!o.showDropdown&&this.state.showDropdown?this.addEventListeners():o.showDropdown&&!this.state.showDropdown&&this.removeEventListeners()}},{key:"componentDidMount",value:function(){this._isMounted=!0}},{key:"componentWillUnmount",value:function(){this._isMounted=!1,this.removeEventListeners()}},{key:"_setState",value:function(e,o){this._isMounted&&this.setState(e,o)}}])&&u(t.prototype,s),h&&u(t,h),o}()},function(e,o,t){}])});
 
 /***/ }),
 
