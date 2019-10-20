@@ -1,0 +1,1 @@
+{"version":3,"sources":["popover/index.js"],"names":["Popover","props"],"mappings":";;;;;;;AAAA;;AACA;;;;AACe,SAASA,OAAT,CAAiBC,KAAjB,EAAwB;AACnC,SAAO,gCAAC,oBAAD,EAAcA,KAAd,CAAP;AACH","sourcesContent":["import React from 'react';\nimport Rpopover from 'rpopover';\nexport default function Popover(props) {\n    return <Rpopover {...props}/>;\n}\n"],"file":"index.js"}

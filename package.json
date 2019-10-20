@@ -1,6 +1,6 @@
 {
 	"name": "react-extensions",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "a react-extensions component library",
 	"main": "/lib/index.js",
 	"module": "/es/index.js",
@@ -27,6 +27,9 @@
 		"react-dom": "^16.9.0",
 		"styled-components": "^4.4.0",
 		"prop-types": "^15.7.2"
+	},
+	"dependencies": {
+		"rpopover": "1.0.8"
 	},
 	"devDependencies": {},
 	"author": "Anish M Prasad",
