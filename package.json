@@ -27,11 +27,12 @@
 		"prop-types": "^15.7.2"
 	},
 	"dependencies": {
-		"rpopover": "1.0.8"
+		"rpopover": "1.0.9",
+		"react-daterangeselector": "1.0.6"
 	},
 	"devDependencies": {},
 	"author": "Anish M Prasad",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/anishmprasad/react-extensions/issues"
 	},
