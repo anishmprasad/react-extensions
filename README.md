@@ -6,7 +6,7 @@
 
 Ensure you have [Yarn](https://yarnpkg.com/lang/en/) installed.
 
-To add Cosmos to your React application, run:
+To add react-extensions to your React application, run:
 
 ```
 $ yarn add react-extensions
