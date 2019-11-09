@@ -41,3 +41,5 @@ const Actions = () => (
   </div>
 )
 ```
+### Licence
+MIT
